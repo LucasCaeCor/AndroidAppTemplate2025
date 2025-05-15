@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.jailton.androidapptemplate.ui.home.HomeFragment"
+        android:name="com.lucas.workeasy.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.jailton.androidapptemplate.ui.dashboard.DashboardFragment"
+        android:name="com.lucas.workeasy.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.jailton.androidapptemplate.ui.usuario.PerfilUsuarioFragment"
+        android:name="com.lucas.workeasy.ui.usuario.PerfilUsuarioFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_perfil_usuario" />
 </navigation>

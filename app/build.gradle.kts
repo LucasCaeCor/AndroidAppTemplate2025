@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.jailton.androidapptemplate"
+    namespace = "com.lucas.workeasy"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.jailton.androidapptemplate"
+        applicationId = "com.lucas.workeasy"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

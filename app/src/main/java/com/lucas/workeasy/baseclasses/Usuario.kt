@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.baseclasses
+package com.lucas.workeasy.baseclasses
 
 data class Usuario(
     var key: String? = null,

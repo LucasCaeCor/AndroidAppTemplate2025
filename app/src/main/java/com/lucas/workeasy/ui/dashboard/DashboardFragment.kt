@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.ui.dashboard
+package com.lucas.workeasy.ui.dashboard
 
 import android.app.Activity
 import android.content.Intent
@@ -21,9 +21,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.jailton.androidapptemplate.R
-import com.jailton.androidapptemplate.baseclasses.Item
-import com.jailton.androidapptemplate.databinding.FragmentDashboardBinding
+import com.lucas.workeasy.R
+import com.lucas.workeasy.baseclasses.Item
+import com.lucas.workeasy.databinding.FragmentDashboardBinding
 import java.util.UUID
 
 class DashboardFragment : Fragment() {

@@ -1,13 +1,13 @@
-package com.jailton.androidapptemplate.ui.dashboard
+package com.lucas.workeasy.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Cadastro de "
+        value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
 }

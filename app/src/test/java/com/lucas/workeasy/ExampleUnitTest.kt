@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate
+package com.lucas.workeasy
 
 import org.junit.Test
 
