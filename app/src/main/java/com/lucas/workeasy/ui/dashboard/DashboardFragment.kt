@@ -22,11 +22,10 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.jailton.androidapptemplate.R
-import com.jailton.androidapptemplate.baseclasses.Item
-import com.jailton.androidapptemplate.databinding.FragmentDashboardBinding
-import kotlinx.coroutines.CoroutineStart
-
+import com.lucas.workeasy.R
+import com.lucas.workeasy.baseclasses.Item
+import com.lucas.workeasy.databinding.FragmentDashboardBinding
+import java.util.UUID
 
 class DashboardFragment : Fragment() {
 
@@ -76,11 +75,7 @@ class DashboardFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         try {
-            //val storage = FirebaseStorage.getInstance()
-            //storageReference = FirebaseStorage.getInstance()
-                //.getReferenceFromUrl("gs://apptemplate-35820.appspot.com")
-                //.child("itens_images")
-            //storageReference = FirebaseStorage.getInstance().getReference().child("itens_images")
+            storageReference = FirebaseStorage.getInstance().reference.child("itens_images")
         } catch (e: Exception) {
             Log.e("FirebaseStorage", "Erro ao obter referência para o Firebase Storage", e)
             // Trate o erro conforme necessario, por exemplo:
@@ -119,29 +114,34 @@ class DashboardFragment : Fragment() {
                 .show()
             return
         }
-        uploadImageToFirestore()
-    }
 
-
-    private fun uploadImageToFirestore() {
-        if (imageUri != null) {
-            val inputStream = context?.contentResolver?.openInputStream(imageUri!!)
-            val bytes = inputStream?.readBytes()
-            inputStream?.close()
-
-            if (bytes != null) {
-                val base64Image = Base64.encodeToString(bytes, Base64.DEFAULT)
-                val endereco = enderecoEditText.text.toString().trim()
-                //TODO("Capture aqui o conteudo que esta nos outros editTexts que foram criados")
-
-                val item = Item(endereco, base64Image)
-
-                saveItemIntoDatabase(item)
-            }
+        if (imageUri == null) {
+            Toast.makeText(context, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT)
+                .show()
+        } else {
+            uploadImageToFirebase()
         }
     }
 
+    private fun uploadImageToFirebase() {
+        if (imageUri != null) {
+            val fileReference = storageReference.child(UUID.randomUUID().toString())
+            fileReference.putFile(imageUri!!)
+                .addOnSuccessListener {
+                    fileReference.downloadUrl.addOnSuccessListener { uri ->
+                        val imageUrl = uri.toString()
+                        val endereco = enderecoEditText.text.toString().trim()
+                        val item = Item(endereco, imageUrl)
 
+                        saveItemIntoDatabase(item)
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(context, "Falha ao fazer upload da imagem", Toast.LENGTH_SHORT)
+                        .show()
+                }
+        }
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

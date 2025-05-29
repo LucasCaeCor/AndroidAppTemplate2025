@@ -1,6 +1,5 @@
-package com.jailton.androidapptemplate.ui.login
+package com.lucas.workeasy.ui.login
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,9 +18,9 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.jailton.androidapptemplate.MainActivity
-import com.jailton.androidapptemplate.R
-import com.jailton.androidapptemplate.ui.usuario.CadastroUsuarioActivity
+import com.lucas.workeasy.MainActivity
+import com.lucas.workeasy.R
+import com.lucas.workeasy.ui.usuario.CadastroUsuarioActivity
 
 class LoginActivity : AppCompatActivity() {
 
