@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.ui.ai
+package com.lucas.workeasy.ui.ai
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.ai.GenerativeModel
 import com.google.firebase.ai.ai
 import com.google.firebase.ai.type.GenerativeBackend
-import com.jailton.androidapptemplate.R
+import com.lucas.workeasy.R
 import kotlinx.coroutines.launch
 
 class AiLogicFragment : Fragment() {

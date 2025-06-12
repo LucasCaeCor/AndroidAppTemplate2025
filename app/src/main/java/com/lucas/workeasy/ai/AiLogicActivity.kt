@@ -1,8 +1,8 @@
-package com.jailton.androidapptemplate.ui.ai
+package com.lucas.workeasy.ui.ai
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.jailton.androidapptemplate.R
+import com.lucas.workeasy.R
 
 class AiLogicActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
