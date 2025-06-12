@@ -1,3 +1,4 @@
+package com.lucas.workeasy
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

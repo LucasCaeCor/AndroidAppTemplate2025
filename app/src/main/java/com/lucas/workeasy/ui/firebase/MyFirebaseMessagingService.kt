@@ -1,3 +1,4 @@
+package com.lucas.workeasy.ui.firebase
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -10,6 +11,8 @@ import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.lucas.workeasy.MainActivity
+import com.lucas.workeasy.R
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -47,6 +50,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         // TODO: Substituir a logica aqui
         val targetProgress = when (status) {
+            "seila" -> 33
+            "MID OF GAME" -> 66
+            "sei la completo" -> 100
             else -> 0
         }
 

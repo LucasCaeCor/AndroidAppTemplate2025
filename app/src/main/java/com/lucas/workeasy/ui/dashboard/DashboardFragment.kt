@@ -1,3 +1,4 @@
+package com.lucas.workeasy.ui.dashboard
 
 import android.app.Activity
 import android.content.Intent
