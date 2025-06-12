@@ -1,4 +1,3 @@
-package com.jailton.androidapptemplate.ui.firebase
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -11,8 +10,6 @@ import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import com.jailton.androidapptemplate.MainActivity
-import com.jailton.androidapptemplate.R
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -50,9 +47,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         // TODO: Substituir a logica aqui
         val targetProgress = when (status) {
-            "em preparo" -> 33
-            "saindo para entrega" -> 66
-            "entregue" -> 100
             else -> 0
         }
 

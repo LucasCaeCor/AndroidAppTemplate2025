@@ -1,4 +1,3 @@
-package com.jailton.androidapptemplate.ui.home
 
 import android.content.Context
 import android.os.Bundle
